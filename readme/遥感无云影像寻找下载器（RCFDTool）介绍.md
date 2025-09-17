@@ -88,7 +88,7 @@
 
 3. 下载**pixi**(包管理工具)
 
-4. 在**Main.py**所在目录中进入**cmd**使用**pixi install** 安装依赖
+4. 在**Main.py**所在目录中进入**cmd**使用**pixi install -e dev** 安装依赖
 
 5. 安装好依赖后运行 **pixi run -e dev python .\Main.py**
 
