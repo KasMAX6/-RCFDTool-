@@ -2,11 +2,15 @@
 
 **代码已开源**：
 
+由于GEE是国外网站需要**Clash代理开启TUN模式，端口设置为7897!!!!** 
+
 github：https://github.com/KasMAX6/-RCFDTool-.git
 
 email:
 
 ajax13279@gmail.com
+
+
 
 在遥感应用中，获取高质量的无云影像一直是个难题。以 Sentinel-2 数据为例，传统做法通常需要研究人员打开 **Google Earth Engine (GEE) 代码编辑器**，编写重复性代码来完成以下流程：
 
