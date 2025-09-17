@@ -21,7 +21,7 @@ class ROIFilePicker(FilePicker,QWidget):
         if self.mode == self.FILE_MODE:
             # 选择文件
             selected_path, _ = QFileDialog.getOpenFileName(
-                self, "选择文件", "", "shp文件 (*.shp|*.geojson)"
+                self, "选择文件", "", "shp文件 (*.shp)"
             )
         if selected_path:
             self.line_edit.setText(selected_path)

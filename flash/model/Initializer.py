@@ -38,6 +38,7 @@ class Initializer:
         # 用服务账号凭证初始化 Earth Engine
         credentials = ee.ServiceAccountCredentials(service_account, key_file)
         ee.Initialize(credentials)
+
         pass
 
 if __name__ == '__main__':
