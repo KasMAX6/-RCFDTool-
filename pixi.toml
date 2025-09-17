@@ -1,0 +1,30 @@
+[workspace]
+authors = ["zengxiangquan <zengxiangquan@staff.deepexi.com>"]
+channels = ["conda-forge"]
+name = "pysiderProject"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pixi-pycharm = ">=0.0.8,<0.0.9"
+python = "3.12.*"
+gdal = ">=3.10.3,<4"
+
+[feature.test.dependencies]
+pytest = "*"
+
+[feature.dev.dependencies]
+pixi-pycharm = ">=0.0.8,<0.0.9"
+geemap = ">=0.36.2,<0.37"
+geopandas = ">=1.1.1,<2"
+rasterio = ">=1.4.3,<2"
+geedim = ">=2.0.0,<3"
+
+[environments]
+test = ["test"]
+dev = ["dev"]
+
+[pypi-dependencies]
+pyside6-fluent-widgets = { version = ">=1.8.7, <2", extras = ["full"] }
