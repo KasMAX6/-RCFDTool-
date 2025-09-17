@@ -37,8 +37,6 @@ class Window(FluentWindow):
 
     def __init__(self):
         super().__init__()
-        self.initServices()
-
         # -------- create sub interface --------
         self.dataSourceInterface = ConfigureDataSource('配置数据源', self)
         self.dataSourceInterface.data_source_config_event.connect(self.on_data_source_config)
@@ -53,6 +51,9 @@ class Window(FluentWindow):
     @Slot(DataSourceConfigure)
     def on_data_source_config(self, config: DataSourceConfigure):
         self.autoSearchInterface.data_source_configure = config
+        if config.data_path_config.base_path is not None:
+            self.initServices( self.autoSearchInterface.data_source_configure)
+
 
     # -------- 注册导航项 --------
     def initNavigation(self):
@@ -82,8 +83,8 @@ class Window(FluentWindow):
         #     position=InfoBadgePosition.NAVIGATION_ITEM
         # )
 
-    def initServices(self):
-        Initializer().initialize()
+    def initServices(self, data_source_configure: DataSourceConfigure):
+        Initializer().initialize(data_source_configure)
 
     # -------- 初始化窗口属性 --------
     def initWindow(self):
