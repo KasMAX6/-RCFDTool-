@@ -1,14 +1,14 @@
 # coding:utf-8
 import sys
+
 from PySide6.QtCore import Qt, QUrl, Slot
 from PySide6.QtGui import QIcon, QDesktopServices, QGuiApplication
 from PySide6.QtWidgets import QApplication, QFrame, QHBoxLayout
+from qfluentwidgets import FluentIcon as FIF
 from qfluentwidgets import (
     NavigationItemPosition, MessageBox, FluentWindow,
-    NavigationAvatarWidget, SubtitleLabel, setFont, InfoBadge,
-    InfoBadgePosition
+    NavigationAvatarWidget, SubtitleLabel, setFont
 )
-from qfluentwidgets import FluentIcon as FIF
 
 from flash.model import Initializer
 from flash.model.DataSourceConfigure import DataSourceConfigure
@@ -30,6 +30,7 @@ class Widget(QFrame):
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.hBoxLayout.addWidget(self.label, 1, Qt.AlignmentFlag.AlignCenter)
         self.setObjectName(text.replace(' ', '-'))
+        self.initialized = False
 
 
 # -------- 主窗口 --------
@@ -37,6 +38,8 @@ class Window(FluentWindow):
 
     def __init__(self):
         super().__init__()
+        self.initialized = False
+
         # -------- create sub interface --------
         self.dataSourceInterface = ConfigureDataSource('配置数据源', self)
         self.dataSourceInterface.data_source_config_event.connect(self.on_data_source_config)
@@ -51,7 +54,7 @@ class Window(FluentWindow):
     @Slot(DataSourceConfigure)
     def on_data_source_config(self, config: DataSourceConfigure):
         self.autoSearchInterface.data_source_configure = config
-        if config.data_path_config.base_path is not None:
+        if config.data_path_config.base_path is not None and not self.initialized:
             self.initServices( self.autoSearchInterface.data_source_configure)
 
 
@@ -85,6 +88,7 @@ class Window(FluentWindow):
 
     def initServices(self, data_source_configure: DataSourceConfigure):
         Initializer().initialize(data_source_configure)
+        self.initialized = True
 
     # -------- 初始化窗口属性 --------
     def initWindow(self):
