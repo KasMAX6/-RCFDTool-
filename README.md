@@ -4,6 +4,8 @@
 
 由于GEE是国外网站需要**Clash代理开启TUN模式，端口设置为7897!!!!** 
 
+使用指南：**https://www.bilibili.com/video/BV1ifpYzhEan/**
+
 github：https://github.com/KasMAX6/-RCFDTool-.git
 
 email:
