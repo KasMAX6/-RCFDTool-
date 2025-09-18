@@ -1,6 +1,18 @@
-------
-
 # 遥感无云影像寻找下载器（RCFDTool）
+
+**代码已开源**：
+
+由于GEE是国外网站需要**Clash代理开启TUN模式，端口设置为7897!!!!** 
+
+使用指南：**https://www.bilibili.com/video/BV1ifpYzhEan/**
+
+github：https://github.com/KasMAX6/-RCFDTool-.git
+
+email:
+
+ajax13279@gmail.com
+
+
 
 在遥感应用中，获取高质量的无云影像一直是个难题。以 Sentinel-2 数据为例，传统做法通常需要研究人员打开 **Google Earth Engine (GEE) 代码编辑器**，编写重复性代码来完成以下流程：
 
@@ -14,7 +26,7 @@
 
 ## 为什么会有 RCFDTool？
 
-传统手动写代码存在以下痛点：
+传统手动写代码查找影像存在以下痛点：
 
 - **效率低**：逐景判断、反复运行代码，工作量巨大。
 - **不直观**：GEE 的代码环境与影像展示分离，用户需要频繁切换。
@@ -88,7 +100,7 @@
 
 3. 下载**pixi**(包管理工具)
 
-4. 在**Main.py**所在目录中进入**cmd**使用**pixi install -e dev** 安装依赖
+4. 在**Main.py**所在目录中进入**cmd**使用**pixi install** **-e dev**安装依赖
 
 5. 安装好依赖后运行 **pixi run -e dev python .\Main.py**
 
