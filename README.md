@@ -2,6 +2,7 @@
 
 **代码已开源**：
 **任何路径不要出现中文!!!**
+
 由于GEE是国外网站需要**Clash代理开启TUN模式，端口设置为7897!!!!** 
 
 使用指南：**https://www.bilibili.com/video/BV1ifpYzhEan/**
