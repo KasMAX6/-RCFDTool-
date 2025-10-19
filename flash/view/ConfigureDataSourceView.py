@@ -169,22 +169,22 @@ class ConfigureDataSource(Widget):
         # row4.addStretch()
         # row4.addSpacing(30)
 
-        roi_label = BodyLabel("基础数据路径")
-        file_picker_base = FilePicker(FilePicker.DIRECTORY_MODE)
-        file_picker_base.setFixedWidth(300)
-        row4.addWidget(roi_label, 0, Qt.AlignmentFlag.AlignVCenter)
-        row4.addWidget(file_picker_base, 1, Qt.AlignmentFlag.AlignTop)
-        row4.addStretch()
-        row4.addSpacing(30)
+        # roi_label = BodyLabel("基础数据路径")
+        # file_picker_base = FilePicker(FilePicker.DIRECTORY_MODE)
+        # file_picker_base.setFixedWidth(300)
+        # row4.addWidget(roi_label, 0, Qt.AlignmentFlag.AlignVCenter)
+        # row4.addWidget(file_picker_base, 1, Qt.AlignmentFlag.AlignTop)
+        # row4.addStretch()
+        # row4.addSpacing(30)
 
         #row5 = QHBoxLayout()
-        roi_label = BodyLabel("影像下载保存路径")
-        file_picker_download = FilePicker(FilePicker.DIRECTORY_MODE)
-        file_picker_download.setFixedWidth(300)
-        row4.addWidget(roi_label, 0, Qt.AlignmentFlag.AlignVCenter)
-        row4.addWidget(file_picker_download, 1, Qt.AlignmentFlag.AlignTop)
-        row4.addStretch()
-        row4.addSpacing(30)
+        # roi_label = BodyLabel("影像下载保存路径")
+        # file_picker_download = FilePicker(FilePicker.DIRECTORY_MODE)
+        # file_picker_download.setFixedWidth(300)
+        # row4.addWidget(roi_label, 0, Qt.AlignmentFlag.AlignVCenter)
+        # row4.addWidget(file_picker_download, 1, Qt.AlignmentFlag.AlignTop)
+        # row4.addStretch()
+        # row4.addSpacing(30)
 
         development_group = BodyLabel("开发者：曾祥权 Beijing Forestry University \n"
                                       "ajax13279@gmail.com")
@@ -216,8 +216,8 @@ class ConfigureDataSource(Widget):
 
         file_picker_gdal.emit_path_selected.connect(self.on_gdal_path_edited)
         ##file_picker_thumb.emit_path_selected.connect(self.on_thumb_path_edited)
-        file_picker_base.emit_path_selected.connect(self.on_base_path_edited)
-        file_picker_download.emit_path_selected.connect(self.on_download_path_edited)
+        # file_picker_base.emit_path_selected.connect(self.on_base_path_edited)
+        # file_picker_download.emit_path_selected.connect(self.on_download_path_edited)
 
         comboBox.currentTextChanged.connect(self.on_selected_satellite_type)
 

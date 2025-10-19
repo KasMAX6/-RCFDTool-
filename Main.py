@@ -1,5 +1,6 @@
 # coding:utf-8
 import sys
+import threading
 
 from PySide6.QtCore import Qt, QUrl, Slot
 from PySide6.QtGui import QIcon, QDesktopServices, QGuiApplication
@@ -9,7 +10,9 @@ from qfluentwidgets import (
     NavigationItemPosition, MessageBox, FluentWindow,
     NavigationAvatarWidget, SubtitleLabel, setFont
 )
+from PySide6.QtCore import QThreadPool, QRunnable
 
+from flash.common.TaskThread import TaskThread
 from flash.model import Initializer
 from flash.model.DataSourceConfigure import DataSourceConfigure
 from flash.view.AutoFindLowCloudView import AutoFindLowCloudView
@@ -55,7 +58,8 @@ class Window(FluentWindow):
     def on_data_source_config(self, config: DataSourceConfigure):
         self.autoSearchInterface.data_source_configure = config
         if config.data_path_config.base_path is not None and not self.initialized:
-            self.initServices( self.autoSearchInterface.data_source_configure)
+            self.initServices(self.autoSearchInterface.data_source_configure)
+            
 
 
     # -------- 注册导航项 --------

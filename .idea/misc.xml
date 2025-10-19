@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="dev" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="dev" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="pixidefault" project-jdk-type="Python SDK" />
 </project>
